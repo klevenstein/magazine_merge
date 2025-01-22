@@ -25,8 +25,8 @@ I had purchased 72 PDF issues of a magazine (*The Gift of Stitching*, or TGOSM) 
 
 Before:
 
-[List of many files: issue1feb2006, issue2march2006, issue3april2006, and so on](img/01-before.png)
+<img src = "img/01-before.png" alt = "List of many files: issue1feb2006, issue2march2006, issue3april2006, and so on" />
 
 After:
 
-[List of 7 files: TGOSM-2006 to TGOSM-2012](img/02-after.png)
+<img src = "img/02-after.png" alt = "List of 7 files: TGOSM-2006 to TGOSM-2012" />
