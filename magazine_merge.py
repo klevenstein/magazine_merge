@@ -1,10 +1,6 @@
 import re
 import os
-
-import sys
-sys.path.append("path/to/your/local/modules")
-# ensures that the script can find these modules:
-
+# Before you begin, install these modules locally, in a venv, etc.
 import pypdf
 import natsort
 
@@ -14,6 +10,7 @@ import natsort
 #   May be year, quarter, volume number, etc.
 # title_string: String to be prepended to the filename of the output PDF.
 
+# Create and sort a list of all files that will be combined.
 def file_list(file_path, vol_num):
     result = []
     pattern = rf"custom_string.*{vol_num}\.pdf"
@@ -27,6 +24,7 @@ def file_list(file_path, vol_num):
     # You may need to find a different sorting solution for your use case.
     return result
 
+# Merge the files according to the list created in file_list()
 def pdf_merge(file_path, vol_num, title_string):
     merger = pypdf.PdfWriter()
     pdf_list = file_list(file_path, vol_num)
@@ -42,15 +40,15 @@ def pdf_merge(file_path, vol_num, title_string):
         output_file.close()
     print("=== Merge complete ===\n")
 
-fpath = "path/to/files"
-volume = range(a, b)
-tstring = "title_string"
+file_path = "path/to/files"
+vol_num = range(a, b)
+title_string = "title_string"
 
 # Example:
-# fpath = "mymagazine"
-# volume = range(2010, 2020)
-# tstring = "My_Magazine"
+# file_path = "mymagazine"
+# vol_num = range(2010, 2020)
+# title_string = "My_Magazine"
 
-for x in volume:
-    pdf_merge(fpath, x, tstring)
+for x in vol_num:
+    pdf_merge(file_path, x, title_string)
 
